@@ -4,6 +4,7 @@ import Add from './components/Add'
 import Change from './components/Change'
 import Delete from './components/Delete'
 import Completed from './components/Completed'
+import Display from './components/Display'
 
 class App extends Component {
   constructor () {
@@ -27,6 +28,10 @@ class App extends Component {
         <Change changeTodo={this.changeTodo}/>
         <Delete deleteTodo={this.deleteTodo}/>
         <Completed completeTodo={this.completeTodo}/>
+
+        <br/>
+
+        <Display todos={this.state.todos}/>
       </div>
     )
   }
@@ -64,10 +69,12 @@ class App extends Component {
 
   completeTodo(position) {
     const updatedTodos = [...this.state.todos]
-    updatedTodos[position].completed = true
+    updatedTodos[position].completed =  !updatedTodos[position].completed
 
+    this.setState({
+      todos: [...updatedTodos]
+    })
   }
-
 }
 
 export default App

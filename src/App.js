@@ -56,7 +56,7 @@ class App extends Component {
     })
   }
 
-  deleteTodo(position) {
+  deleteTodo (position) {
     const updatedTodos = this.state.todos
 
     this.setState({
@@ -67,9 +67,9 @@ class App extends Component {
     })
   }
 
-  completeTodo(position) {
+  completeTodo (position) {
     const updatedTodos = [...this.state.todos]
-    updatedTodos[position].completed =  !updatedTodos[position].completed
+    updatedTodos[position].completed = !updatedTodos[position].completed
 
     this.setState({
       todos: [...updatedTodos]
